@@ -1,4 +1,11 @@
+#!/usr/bin/python3
+"""
+no modules
+"""
+
+
 def pascal_triangle(n):
+    """ new function"""
     if n <= 0:
         return []
     
