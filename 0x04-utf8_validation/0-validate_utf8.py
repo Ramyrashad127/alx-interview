@@ -10,7 +10,6 @@ def validUTF8(data):
         """start with 10xxxxxx"""
         return 128 <= byte <= 191
 
-
     i = 0
     n = len(data)
     while i < n:
