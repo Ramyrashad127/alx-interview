@@ -7,8 +7,9 @@
 def validUTF8(data):
     """function to check data"""
     def is_continuation_byte(byte):
-        """10xxxxxx"""
+        """start with 10xxxxxx"""
         return 128 <= byte <= 191
+
 
     i = 0
     n = len(data)
