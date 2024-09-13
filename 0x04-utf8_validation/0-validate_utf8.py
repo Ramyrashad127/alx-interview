@@ -7,7 +7,7 @@ from typing import List
 
 def validUTF8(data: List[int]) -> bool:
     """function to check data"""
-    def is_continuation_byte(byte):
+    def is_continuation_byte(byte: int) -> bool:
         """start with 10xxxxxx"""
         return 128 <= byte <= 191
 
