@@ -5,7 +5,7 @@
 from typing import List
 
 
-def valid_utf8(data: List[int]) -> bool:
+def validUTF8(data: List[int]) -> bool:
     """function to check data"""
     def is_continuation_byte(byte):
         """start with 10xxxxxx"""
