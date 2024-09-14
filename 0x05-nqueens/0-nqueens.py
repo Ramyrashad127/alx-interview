@@ -28,9 +28,6 @@ def construct(row: int, n: int) -> None:
 
 def nqueen(n: int) -> None:
     """return list of integers for positions of n queens on n*n chessboard"""
-    if len(n) != 2:
-        print("Usage: nqueens N")
-        sys.exit(1)
     try:
         n = int(n)
     except Exception:
@@ -43,5 +40,7 @@ def nqueen(n: int) -> None:
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
     n = sys.argv[1]
     nqueen(n)
