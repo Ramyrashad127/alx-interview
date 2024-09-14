@@ -8,7 +8,7 @@ import sys
 ans = []
 
 
-def construct(row, n):
+def construct(row: int, n: int) -> None:
     """Backtracking to place queens"""
     if row == n:
         print(ans)
@@ -26,7 +26,7 @@ def construct(row, n):
             ans.pop()
 
 
-def nqueen(n):
+def nqueen(n: int) -> None:
     """return list of integers for positions of n queens on n*n chessboard"""
     try:
         n = int(n)
