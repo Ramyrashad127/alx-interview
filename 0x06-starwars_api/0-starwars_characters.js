@@ -1,23 +1,24 @@
 #!/usr/bin/node
 
-const request = require('request');
+const fetch = require('node-fetch');
+const movieId = process.argv[2];
 
-request(
-  `https://swapi-api.hbtn.io/api/films/${process.argv[2]}`,
-  (err, response, body) => {
-    if (err) {
-      throw err;
-    } else {
-      const chars = JSON.parse(body).characters;
-        chars.forEach((char) => {
-            request(char, (err, response, body) => {
-            if (err) {
-                throw err;
-            } else {
-                console.log(JSON.parse(body).name);
-            }
-            });
-        });
+
+const apiUrl = `https://swapi.dev/api/films/${movieId}/`;
+
+
+(async () => {
+    const response = await fetch(apiUrl);
+    const movieData = await response.json();
+    const characterUrls = movieData.characters;
+
+    for (const url of characterUrls) {
+        const charResponse = await fetch(url);
+        if (!charResponse.ok) {
+            console.error('Failed to retrieve character. Status code:', charResponse.status);
+            continue;
+        }
+        const charData = await charResponse.json();
+        console.log(charData.name);
     }
-  }
-);
+})();
