@@ -14,10 +14,6 @@ const apiUrl = `https://swapi.dev/api/films/${movieId}/`;
 
     for (const url of characterUrls) {
         const charResponse = await fetch(url);
-        if (!charResponse.ok) {
-            console.error('Failed to retrieve character. Status code:', charResponse.status);
-            continue;
-        }
         const charData = await charResponse.json();
         console.log(charData.name);
     }
