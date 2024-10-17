@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Prime Game"""
+"""Prime Game module"""
 
 
 def isWinner(x, nums):
-    """Prime Game"""
+    """Prime Game function"""
     Maria = 0
     Ben = 0
     prime = [0, 0]
