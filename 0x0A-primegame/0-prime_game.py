@@ -6,22 +6,19 @@ def isWinner(x, nums):
     """Prime Game function ALX"""
     Maria = 0
     Ben = 0
-    limit = max(nums)
-    prime = [0] * (limit + 1)
+    prime = [0, 0]
+    for i in range(2, 10005):
+        prime.append(1)
 
-    for i in range(2, limit + 1):
-        prime[i] = 1
-
-    for i in range(2, int(limit ** 0.5) + 1):
+    for i in range(2, 10001):
         if prime[i] == 1:
-            for j in range(i * i, limit + 1, i):
+            for j in range(i + i, 10001, i):
                 prime[j] = 0
 
-    for i in range(1, limit + 1):
+    for i in range(1, 10001):
         prime[i] += prime[i - 1]
-
-    for n in range(0, x + 1):
-        if prime[n] % 2 == 0:
+    for i in range(x):
+        if prime[nums[i]] % 2 == 0:
             Ben += 1
         else:
             Maria += 1
