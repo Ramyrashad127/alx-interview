@@ -12,7 +12,7 @@ def isWinner(x, nums):
 
     for i in range(2, 10001):
         if prime[i] == 1:
-            for j in range(i * i, 10001, i):
+            for j in range(i + i, 10001, i):
                 prime[j] = 0
 
     for i in range(1, 10001):
