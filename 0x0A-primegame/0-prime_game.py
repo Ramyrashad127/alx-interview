@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Prime Game module"""
+"""Prime Game module ALX"""
 
 
 def isWinner(x, nums):
-    """Prime Game function"""
+    """Prime Game function ALX"""
     Maria = 0
     Ben = 0
     prime = [0, 0]
@@ -16,8 +16,7 @@ def isWinner(x, nums):
                 prime[j] = 0
 
     for i in range(1, 10001):
-        prime[i] += prime[i-1]
-
+        prime[i] += prime[i - 1]
     for n in nums:
         if prime[n] % 2 == 0:
             Ben += 1
