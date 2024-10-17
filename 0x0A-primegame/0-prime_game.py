@@ -20,7 +20,7 @@ def isWinner(x, nums):
     for i in range(1, limit + 1):
         prime[i] += prime[i - 1]
 
-    for n in range(x+1):
+    for n in range(0, x + 1):
         if prime[n] % 2 == 0:
             Ben += 1
         else:
